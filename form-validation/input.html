@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width" />
+    <title>無題ドキュメント</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      rel="stylesheet"
+    />
+    <link href="../assets/css/main.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="page-container">
+      <header id="masthead" class="site-header">
+        <h1 class="site-header__logo">
+          JSサンプル
+        </h1>
+      </header>
+      <div class="page-content">
+        <section>
+          <header>
+            <h1>フォームのバリデーションサンプル</h1>
+          </header>
+          <div class="form-flow" data-flow="input">
+            <ol class="form-flow__list">
+              <li class="form-is-current">
+                <div class="form-flow__label">1. 入力</div>
+              </li>
+              <li>
+                <div class="form-flow__label">2. 確認</div>
+              </li>
+              <li>
+                <div class="form-flow__label">3. 完了</div>
+              </li>
+            </ol>
+          </div>
+          <p>
+            フォームの情報をJavaScriptのオブジェクトとして管理することで、シンプルなhtmlで管理することができ、運用もしやすくなります。
+            XMLやJSONとして管理することも可能です。
+          </p>
+          <form
+            action="#"
+            method="POST"
+            name="default"
+            data-form-app="default"
+            class="form-container"
+            novalidate
+          >
+            <table class="form-table">
+              <tbody>
+                <tr data-form-container="set">
+                  <th>
+                    氏名
+                    <i class="form-chip form-chip--alert">必須</i>
+                  </th>
+                  <td>
+                    <div class="form-item-container" data-form-container="item">
+                      <div class="form-field form-field--half">
+                        <input
+                          class="form-textfield"
+                          type="text"
+                          name="name"
+                          data-name="name"
+                          placeholder="例）氏名 太郎"
+                        />
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr data-form-container="set">
+                  <th>
+                    フリガナ
+                    <i class="form-chip form-chip--alert">必須</i>
+                  </th>
+                  <td>
+                    <div class="form-item-container" data-form-container="item">
+                      <div class="form-field form-field--half">
+                        <input
+                          class="form-textfield"
+                          type="text"
+                          name="kana"
+                          data-name="kana"
+                          placeholder="例）シメイ タロウ"
+                        />
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr data-form-container="set">
+                  <th>
+                    英字のみ（全半角）
+                    <i class="form-chip form-chip--alert">必須</i>
+                  </th>
+                  <td>
+                    <div class="form-item-container" data-form-container="item">
+                      <div class="form-field form-field--half">
+                        <input
+                          class="form-textfield"
+                          type="text"
+                          name="alphabet"
+                          data-name="alphabet"
+                          placeholder="例）abc def"
+                        />
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr data-form-container="set">
+                  <th>
+                    英字のみ（半角）
+                    <i class="form-chip form-chip--alert">必須</i>
+                  </th>
+                  <td>
+                    <div class="form-item-container" data-form-container="item">
+                      <div class="form-field form-field--half">
+                        <input
+                          class="form-textfield"
+                          type="text"
+                          name="alphabet_single"
+                          data-name="alphabet_single"
+                          placeholder="例）abc def"
+                        />
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr data-form-container="set">
+                  <th>
+                    英字のみ（全角）
+                    <i class="form-chip form-chip--alert">必須</i>
+                  </th>
+                  <td>
+                    <div class="form-item-container" data-form-container="item">
+                      <div class="form-field form-field--half">
+                        <input
+                          class="form-textfield"
+                          type="text"
+                          name="alphabet_multi"
+                          data-name="alphabet_multi"
+                          placeholder="例）ａｂｃ ｅｆｇ"
+                        />
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr data-form-container="set">
+                  <th>
+                    数字のみ（全半角）
+                    <i class="form-chip form-chip--alert">必須</i>
+                  </th>
+                  <td>
+                    <div class="form-item-container" data-form-container="item">
+                      <div class="form-field form-field--half">
+                        <input
+                          class="form-textfield"
+                          type="text"
+                          name="number"
+                          data-name="number"
+                          placeholder="例）012"
+                        />
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr data-form-container="set">
+                  <th>
+                    数字のみ（半角）
+                    <i class="form-chip form-chip--alert">必須</i>
+                  </th>
+                  <td>
+                    <div class="form-item-container" data-form-container="item">
+                      <div class="form-field form-field--half">
+                        <input
+                          class="form-textfield"
+                          type="text"
+                          name="number_single"
+                          data-name="number_single"
+                          placeholder="例）012"
+                        />
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr data-form-container="set">
+                  <th>
+                    数字のみ（全角）
+                    <i class="form-chip form-chip--alert">必須</i>
+                  </th>
+                  <td>
+                    <div class="form-item-container" data-form-container="item">
+                      <div class="form-field form-field--half">
+                        <input
+                          class="form-textfield"
+                          type="text"
+                          name="number_multi"
+                          data-name="number_multi"
+                          placeholder="例）０１２"
+                        />
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr data-form-container="set">
+                  <th>
+                    0含む自然数のみ
+                    <i class="form-chip form-chip--alert">必須</i>
+                  </th>
+                  <td>
+                    <div class="form-item-container" data-form-container="item">
+                      <div class="form-field form-field--half">
+                        <input
+                          class="form-textfield"
+                          type="text"
+                          name="integer"
+                          data-name="integer"
+                          placeholder="例）123"
+                        />
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr data-form-container="set">
+                  <th>
+                    E-Mail
+                    <i class="form-chip form-chip--alert">必須</i>
+                  </th>
+                  <td>
+                    <div class="form-item-container" data-form-container="item">
+                      <div class="form-field form-field--half">
+                        <input
+                          class="form-textfield"
+                          type="email"
+                          name="email"
+                          data-name="email"
+                          placeholder="example@example.com"
+                        />
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr data-form-container="set">
+                  <th>
+                    初期値あり
+                    <i class="form-chip form-chip--alert">必須</i>
+                  </th>
+                  <td>
+                    <div class="form-item-container" data-form-container="item">
+                      <div class="form-field form-field--half">
+                        <input
+                          class="form-textfield"
+                          type="text"
+                          name="has_initial"
+                          data-name="has_initial"
+                          value="初期値あり"
+                        />
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr data-form-container="set">
+                  <th>
+                    任意項目
+                    <i class="form-chip form-chip--warning">任意</i>
+                  </th>
+                  <td>
+                    <div class="form-item-container" data-form-container="item">
+                      <div class="form-field form-field--half">
+                        <input
+                          class="form-textfield"
+                          type="text"
+                          name="optional"
+                          data-name="optional"
+                        />
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr data-form-container="set">
+                  <th>
+                    チェックボックス
+                    <i class="form-chip form-chip--alert">必須</i>
+                  </th>
+                  <td>
+                    <div class="form-item-container" data-form-container="item">
+                      <div class="form-field">
+                        <div class="checkbox">
+                          <input
+                            type="checkbox"
+                            name="checkbox"
+                            id="checkbox_1"
+                            class="form-checkbox"
+                            data-name="checkbox"
+                            value="0"
+                          />
+                          <label for="checkbox_1">ラベル1</label>
+                        </div>
+                        <div class="checkbox">
+                          <input
+                            type="checkbox"
+                            name="checkbox"
+                            id="checkbox_2"
+                            class="form-checkbox"
+                            data-name="checkbox"
+                            value="1"
+                          />
+                          <label for="checkbox_2">ラベル2</label>
+                        </div>
+                        <div class="checkbox">
+                          <input
+                            type="checkbox"
+                            name="checkbox"
+                            id="checkbox_3"
+                            class="form-checkbox"
+                            data-name="checkbox"
+                            value="2"
+                          />
+                          <label for="checkbox_3">ラベル3</label>
+                        </div>
+                        <div class="checkbox">
+                          <input
+                            type="checkbox"
+                            name="checkbox"
+                            id="checkbox_4"
+                            class="form-checkbox"
+                            data-name="checkbox"
+                            value="3"
+                          />
+                          <label for="checkbox_4">ラベル4</label>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr data-form-container="set">
+                  <th>
+                    ラジオボタン
+                    <i class="form-chip form-chip--alert">必須</i>
+                  </th>
+                  <td>
+                    <div class="form-item-container" data-form-container="item">
+                      <div class="form-field">
+                        <div class="radio">
+                          <input
+                            type="radio"
+                            name="radio"
+                            id="radio_1"
+                            class="form-radio"
+                            data-name="radio"
+                            value="0"
+                          />
+                          <label for="radio_1">ラベル1</label>
+                        </div>
+                        <div class="radio">
+                          <input
+                            type="radio"
+                            name="radio"
+                            id="radio_2"
+                            class="form-radio"
+                            data-name="radio"
+                            value="1"
+                          />
+                          <label for="radio_2">ラベル2</label>
+                        </div>
+                        <div class="radio">
+                          <input
+                            type="radio"
+                            name="radio"
+                            id="radio_3"
+                            class="form-radio"
+                            data-name="radio"
+                            value="2"
+                          />
+                          <label for="radio_3">ラベル3</label>
+                        </div>
+                        <div class="radio">
+                          <input
+                            type="radio"
+                            name="radio"
+                            id="radio_4"
+                            class="form-radio"
+                            data-name="radio"
+                            value="3"
+                          />
+                          <label for="radio_4">ラベル4</label>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+                <tr data-form-container="set">
+                  <th>
+                    独自hoge入力欄
+                    <i class="form-chip form-chip--warning">任意</i>
+                  </th>
+                  <td>
+                    <p>入力する場合は必ず「hoge」とご入力ください。</p>
+                    <div class="form-item-container" data-form-container="item">
+                      <div class="form-field form-field--half">
+                        <input
+                          class="form-textfield"
+                          type="text"
+                          name="hoge"
+                          data-name="hoge"
+                          placeholder="例）hoge"
+                        />
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="form-button-container">
+              <button type="submit" class="form-button form-button--primary">
+                送信
+              </button>
+            </div>
+          </form>
+        </section>
+      </div>
+      <footer id="colophon" class="site-footer">
+        <div class="copyright">JSサンプル</div>
+      </footer>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/form-app/utility.js"></script>
+    <script src="./js/form-app/validation.js"></script>
+    <script src="./js/form-app/controller.js"></script>
+    <!-- ↓起動設定ファイル↓ -->
+    <script src="./js/default.js"></script>
+  </body>
+</html>
